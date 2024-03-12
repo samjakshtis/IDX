@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Connect a Bank Account</title>
+    <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
+</head>
+<body>
+    <button id="link-button">Connect a Bank Account</button>
+    <script>
+        document.getElementById('link-button').addEventListener('click', function() {
+            fetch('/create_link_token/', { method: 'POST' })  // Adjusted endpoint
+            .then(response => response.json())
+            .then(data => {
+                const handler = Plaid.create({
+                    token: data.link_token,
+                    onSuccess: function(public_token, metadata) {
+                        // Send the public_token to your server to exchange for an access_token
+                        fetch('/exchange_public_token/', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ public_token: public_token })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            // Once you have the access token, you can use it to fetch transactions
+                            console.log(data.access_token);
+                            // Make another request to fetch transactions
+                            fetch('/fetch_transactions/', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json'
+                                },
+                                body: JSON.stringify({ access_token: data.access_token })
+                            })
+                            .then(response => response.json())
+                            .then(transactions => {
+                                console.log(transactions);  // Handle the fetched transactions here
+                            })
+                            .catch(error => {
+                                console.error('Error fetching transactions:', error);
+                            });
+                        })
+                        .catch(error => {
+                            console.error('Error exchanging public token for access token:', error);
+                        });
+                    },
+                    onExit: function(err, metadata) {
+                        // Optionally handle the user exiting the Link flow
+                        console.log(err);
+                    },
+                    // Additional configuration options
+                });
+
+                handler.open();
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
