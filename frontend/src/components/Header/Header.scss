@@ -1,0 +1,33 @@
+.App-header {
+    background-color: #f0f0f0;
+    /* Example background color */
+    padding: 20px;
+    /* Add space inside the header */
+}
+
+.App-header nav {
+    display: flex;
+    /* Enable Flexbox for layout */
+    justify-content: space-between;
+    /* Distribute links horizontally */
+    width: 100%
+}
+
+.App-header nav a {
+    color: black;
+    /* Example link color */
+    text-decoration: none;
+    /* Remove underline */
+    margin: 0 20px;
+    /* Add space between links */
+}
+
+.App-header nav a:hover {
+    color: #ffffff;
+    /* Example link color */
+    text-decoration: teal;
+    /* Remove underline */
+    margin: 0 40px;
+    background: linear-gradient(-45deg,#2298e6, #bdde4d);
+    /* Add space between links */
+}
