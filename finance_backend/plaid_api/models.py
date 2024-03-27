@@ -1,7 +1,13 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.utils import timezone 
 
 class WorkingPapers(models.Model):
-    Title = models.CharField(max_length=50) 
-    Authors = models.CharField(max_length=500)
-    Abstract = models.CharField(max_length=1000)
+    title = models.CharField(max_length=500)
+    authors = models.CharField(max_length=500)
+    abstract = models.CharField(max_length=10000)
+    paper_url = models.URLField()  # Store the URL of the working paper
+    date_entered = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return self.title
