@@ -21,12 +21,14 @@ function WorkingPapers() {
     return (
         <div>
             <h1>Working Papers</h1>
-            <ul>
+            <ul className="tile-list">
                 {data.map((item, index) => (
                     <li key={index}>
-                        <h2>{item.Title}</h2>
-                        <p>Authors: {item.Authors}</p>
-                        <p>Abstract: {item.Abstract}</p>
+                        <a href={item.paper_url} className="tile-link"> {/* Replace '/item/${item.id}' with the appropriate URL */}
+                            <h2>{item.title}</h2>
+                            <p>Authors: {item.authors}</p>
+                            <p>Abstract: {item.abstract}</p>
+                        </a>
                     </li>
                 ))}
             </ul>
