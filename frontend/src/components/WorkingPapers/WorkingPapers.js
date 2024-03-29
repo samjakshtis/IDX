@@ -24,10 +24,13 @@ function WorkingPapers() {
             <ul className="tile-list">
                 {data.map((item, index) => (
                     <li key={index}>
-                        <a href={item.paper_url} className="tile-link"> {/* Replace '/item/${item.id}' with the appropriate URL */}
+                        <a href={item.paper_url} className="tile-link">
                             <h2>{item.title}</h2>
-                            <p>Authors: {item.authors}</p>
-                            <p>Abstract: {item.abstract}</p>
+                            <p id="Authors">Authors: {item.authors}</p>
+                            <p id="Abstract-title">Abstract</p>
+                            <div className="abstract-wrapper">
+                                <p id="Abstract">{item.abstract}</p>
+                            </div>
                         </a>
                     </li>
                 ))}

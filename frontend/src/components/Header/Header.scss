@@ -1,33 +1,43 @@
 .App-header {
-    background-color: #f0f0f0;
-    /* Example background color */
-    padding: 20px;
-    /* Add space inside the header */
-}
-
-.App-header nav {
     display: flex;
-    /* Enable Flexbox for layout */
+    align-items: center;
     justify-content: space-between;
-    /* Distribute links horizontally */
-    width: 100%
+    font-size: calc(10px + 2vmin);
+    color: white;
+    margin: 20px;
 }
 
-.App-header nav a {
-    color: black;
-    /* Example link color */
+.header-left {
+    margin-right: auto;
+    /* Pushes to the left */
+}
+
+.header-name {
+    font-size: 40px;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
     text-decoration: none;
-    /* Remove underline */
-    margin: 0 20px;
-    /* Add space between links */
 }
 
-.App-header nav a:hover {
-    color: #ffffff;
-    /* Example link color */
-    text-decoration: teal;
-    /* Remove underline */
-    margin: 0 40px;
-    background: linear-gradient(-45deg,#2298e6, #bdde4d);
-    /* Add space between links */
+.header-right {
+    margin-left: auto;
+    font-size: 20px;
+    margin-right: 50px;
+}
+
+.header-right nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-right a {
+    color: black;
+    text-decoration: none;
+    margin-left: 20px;
+    /* Adjust margin for spacing between links */
+}
+
+.header-right a:hover {
+    color: #3057bc;
+    text-decoration: underline;
 }

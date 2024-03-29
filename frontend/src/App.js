@@ -6,15 +6,13 @@ import Home from './components/Home/Home.js';
 import Movies from './components/Movies/Movies.js';
 import Podcasts from './components/Podcasts/Podcasts.js';
 import './App.css'
-
+import MouseSand from './components/MouseTrail/mousetrail.js';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <header className="App-header">
-          <Header />
-        </header>
+        <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/workingpaper" element={<WorkingPapers />} />
@@ -22,6 +20,7 @@ function App() {
           <Route path="/podcasts" element={<Podcasts />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
         </Routes>
+        <MouseSand />
       </div>
     </BrowserRouter>
   );
