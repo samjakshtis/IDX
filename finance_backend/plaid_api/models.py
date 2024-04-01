@@ -11,3 +11,12 @@ class WorkingPapers(models.Model):
 
     def __str__(self):
         return self.title
+
+class MoviesModel(models.Model):
+    title = models.CharField(max_length=500)
+    rating = models.IntegerField()
+    movie_url = models.URLField()
+    date_entered = models.DateField(default=timezone.now)
+
+    def __str__(self):
+        return self.title

@@ -5,6 +5,7 @@ import Header from './components/Header/Header.js';
 import Home from './components/Home/Home.js';
 import Movies from './components/Movies/Movies.js';
 import Podcasts from './components/Podcasts/Podcasts.js';
+import Contact from './components/Contact/contact.js'
 import './App.css'
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
@@ -104,7 +105,7 @@ function App() {
           <Route path="/workingpaper" element={<WorkingPapers />} />
           <Route path="/movies" element={<Movies />} />
           <Route path="/podcasts" element={<Podcasts />} />
-          {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         <div className='particles'>
           <Particles

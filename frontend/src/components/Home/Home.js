@@ -26,19 +26,21 @@ function Home() {
         <VerticalTimeline>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#000000', fontWeight: 'bold' }}
+                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#111111', fontWeight: 'bold' }}
                 contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
                 // dateStyle={{ color: 'black' }}
                 date="2023 - present"
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
                 icon={< WorkIcon onClick={handleIconHover} />}
             >
-                <h3 className="vertical-timeline-element-title" onClick={handleIconHover}>Financial Data Analyst</h3>
-                <br />
-                <h4 className="vertical-timeline-element-subtitle" onClick={handleIconHover}>Location: Remote</h4>
-                <p onClick={handleIconHover}>
-                    ETL, SQL, Python, Financial Data modeling efficiency through software development, Project Management, Team Leading
-                </p>
+                <div className='info'>
+                    <h3 className="vertical-timeline-element-title" onClick={handleIconHover}>Financial Data Analyst</h3>
+                    <br />
+                    <h4 className="vertical-timeline-element-subtitle" onClick={handleIconHover}>Location: Remote</h4>
+                    <p onClick={handleIconHover}>
+                        ETL, SQL, Python, Financial Data modeling efficiency through software development, Project Management, Team Leading
+                    </p>
+                </div>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"

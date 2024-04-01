@@ -1,5 +1,5 @@
 // Variables
-$primary-color: linear-gradient(to right, #f3ec78, #af4261);
+$primary-color: #007bff;
 $secondary-color: #6c757d;
 
 // Styles
@@ -52,11 +52,8 @@ body {
 .tile-link p {
     margin: 5px 0;
 }
-
 h1 {
-    background: $primary-color;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: $primary-color;
 }
 
 ul {
@@ -93,9 +90,7 @@ p:first-child {
 #Abstract-title {
     font-size: 20px;
     font-weight: bold;
-    background: $primary-color;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #007bff;
     justify-content: flex-end;
     bottom: 100px;
 }
