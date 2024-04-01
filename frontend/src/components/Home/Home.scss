@@ -1,0 +1,14 @@
+.vertical-timeline-element--work {
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    /* Add transition effect for smooth expansion */
+}
+
+.vertical-timeline-element--work:hover {
+    transform: scale(1.1);
+    /* Expand the icon by 10% on hover */
+}
+
+// p {
+//     color: black;
+// }

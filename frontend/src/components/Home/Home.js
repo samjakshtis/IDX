@@ -1,26 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from 'react-modal';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import WorkIcon from '@material-ui/icons/Work';
 import SchoolIcon from '@material-ui/icons/School';
 import StarIcon from '@material-ui/icons/Star';
+import './Home.scss'
 
 function Home() {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    // Function to handle icon hover
+    const handleIconHover = () => {
+        console.log("hey")
+        setIsModalOpen(true);
+    };
+
+    // Function to close modal
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return <div>
         {/* <h1>Home Page</h1> */}
         <VerticalTimeline>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#000000', fontWeight: 'bold' }}
                 contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                date="2011 - present"
+                // dateStyle={{ color: 'black' }}
+                date="2023 - present"
                 iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                icon={<WorkIcon />}
+                icon={< WorkIcon onClick={handleIconHover} />}
             >
-                <h3 className="vertical-timeline-element-title">Creative Director</h3>
-                <h4 className="vertical-timeline-element-subtitle">Miami, FL</h4>
-                <p>
-                    Creative Direction, User Experience, Visual Design, Project Management, Team Leading
+                <h3 className="vertical-timeline-element-title" onClick={handleIconHover}>Financial Data Analyst</h3>
+                <br />
+                <h4 className="vertical-timeline-element-subtitle" onClick={handleIconHover}>Location: Remote</h4>
+                <p onClick={handleIconHover}>
+                    ETL, SQL, Python, Financial Data modeling efficiency through software development, Project Management, Team Leading
                 </p>
             </VerticalTimelineElement>
             <VerticalTimelineElement
@@ -100,6 +117,14 @@ function Home() {
                 icon={<StarIcon />}
             />
         </VerticalTimeline>
+        <Modal
+            isOpen={isModalOpen}
+            onRequestClose={closeModal}
+            contentLabel="Example Modal"
+        >
+            <h2>Modal Title</h2>
+            <button onClick={closeModal}>Close Modal</button>
+        </Modal>
     </div>;
 }
 
