@@ -29,7 +29,7 @@ function App() {
     () => ({
       background: {
         color: {
-          value: "#E9F2F7",
+          value: "#000000",
         },
       },
       fpsLimit: 120,
@@ -49,17 +49,17 @@ function App() {
             quantity: 4,
           },
           repulse: {
-            distance: 200,
+            distance: 10,
             duration: 0.4,
           },
         },
       },
       particles: {
         color: {
-          value: "#0610CC",
+          value: "#e60000",
         },
         links: {
-          color: "#000000",
+          color: "#fff700",
           distance: 150,
           enable: true,
           opacity: 0.5,
@@ -71,7 +71,7 @@ function App() {
           outModes: {
             default: "bounce",
           },
-          random: false,
+          random: true,
           speed: 6,
           straight: false,
         },
