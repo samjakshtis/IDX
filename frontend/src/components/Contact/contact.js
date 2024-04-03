@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+import './contac.scss'
 
 const ContactPage = () => {
     const [name, setName] = useState('');
     const [message, setMessage] = useState('');
+    const [email, setemail] = useState('');
 
     const handleNameChange = (event) => {
         setName(event.target.value);
+    };
+
+    const handleEmailChange = (event) => {
+        setemail(event.target.value);
     };
 
     const handleMessageChange = (event) => {
@@ -23,7 +29,7 @@ const ContactPage = () => {
     return (
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
             {/* Calendly Scheduling Section */}
-            <div style={{ flex: 1 }}>
+            <div className="Scheduling">
                 <h2>Schedule a Time with Me</h2>
                 <iframe
                     title="Calendly Scheduling Page"
@@ -32,7 +38,7 @@ const ContactPage = () => {
                 ></iframe>
             </div>
             {/* Contact Me Section */}
-            <div style={{ flex: 1 }}>
+            <div className='Contact'>
                 <h2>Contact Me</h2>
                 <form onSubmit={handleSubmit}>
                     <div>
@@ -42,6 +48,16 @@ const ContactPage = () => {
                             id="name"
                             value={name}
                             onChange={handleNameChange}
+                            required
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="name">Email:</label>
+                        <input
+                            type="text"
+                            id="name"
+                            value={email}
+                            onChange={handleEmailChange}
                             required
                         />
                     </div>

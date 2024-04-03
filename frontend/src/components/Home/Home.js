@@ -6,9 +6,12 @@ import WorkIcon from '@material-ui/icons/Work';
 import SchoolIcon from '@material-ui/icons/School';
 import StarIcon from '@material-ui/icons/Star';
 import './Home.scss'
+// import { Document, Page, pdfjs } from 'react-pdf';
 
 function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);
+    // pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
+
 
     // Function to handle icon hover
     const handleIconHover = () => {
@@ -21,62 +24,88 @@ function Home() {
         setIsModalOpen(false);
     };
 
+    // const pdfUrl = 'frontend/public/Sam Jakshtis Resume (3).pdf';
+
+    function handleClick() {
+        window.open("./Sam Jakshtis Resume (3).pdf", "_blank");
+    }
+
+
     return <div>
-        {/* <h1>Home Page</h1> */}
+        <h1 className='Title'>My Timeline</h1>
+        <button className="resume-button" onClick={handleClick}>Resumé</button>
         <VerticalTimeline>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                contentStyle={{ background: 'rgb(33, 150, 243)', color: '#111111', fontWeight: 'bold' }}
-                contentArrowStyle={{ borderRight: '7px solid  rgb(33, 150, 243)' }}
-                // dateStyle={{ color: 'black' }}
-                date="2023 - present"
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                contentStyle={{ background: 'linear-gradient(45deg, #f3ec78, #af4261)', color: '#fff', fontWeight: 'bold' }}
+                contentArrowStyle={{ borderRight: '7px solid ' }}
+                iconStyle={{ background: 'linear-gradient(to right, #f3ec78, #af4261)', color: '#fff' }}
                 icon={< WorkIcon onClick={handleIconHover} />}
             >
                 <div className='info'>
-                    <h3 className="vertical-timeline-element-title" onClick={handleIconHover}>Financial Data Analyst</h3>
-                    <br />
+                    <h2 className="vertical-timeline-element-title" onClick={handleIconHover}><b><u>Financial Data Analyst</u></b></h2>
+                    <h3><i>Company:</i> Darwin Homes</h3>
                     <h4 className="vertical-timeline-element-subtitle" onClick={handleIconHover}>Location: Remote</h4>
+                    <br />
                     <p onClick={handleIconHover}>
                         ETL, SQL, Python, Financial Data modeling efficiency through software development, Project Management, Team Leading
                     </p>
+                    <p><i>2023-Present</i></p>
                 </div>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                date="2010 - 2011"
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                icon={<WorkIcon />}
+                contentStyle={{ background: 'linear-gradient(-45deg, #f3ec78, #af4261)', color: '#fff', fontWeight: 'bold' }}
+                contentArrowStyle={{ borderRight: '7px solid ' }}
+                iconStyle={{ background: 'linear-gradient(to right, #f3ec78, #af4261)', color: '#fff' }}
+                icon={< WorkIcon onClick={handleIconHover} />}
             >
-                <h3 className="vertical-timeline-element-title">Art Director</h3>
-                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                <p>
-                    Creative Direction, User Experience, Visual Design, SEO, Online Marketing
-                </p>
+                <div className='info'>
+                    <h2 className="vertical-timeline-element-title" onClick={handleIconHover}><b><u>Project Manager</u></b></h2>
+                    <h3><i>Company:</i> LandVest</h3>
+                    <h4 className="vertical-timeline-element-subtitle" onClick={handleIconHover}>Location: Boston, MA</h4>
+                    <br />
+                    <p onClick={handleIconHover}>
+                        Developed multi-tiered pricing model for $+1B of real estate deals (development, acquisitions, and refinances for clients)
+                    </p>
+                    <p><i>2021-2023</i></p>
+                </div>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                date="2008 - 2010"
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                icon={<WorkIcon />}
+                contentStyle={{ background: 'linear-gradient(-45deg, #f3ec78, #af4261)', color: '#fff', fontWeight: 'bold' }}
+                contentArrowStyle={{ borderRight: '7px solid ' }}
+                iconStyle={{ background: 'linear-gradient(to right, #f3ec78, #af4261)', color: '#fff' }}
+                icon={< WorkIcon onClick={handleIconHover} />}
             >
-                <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                <h4 className="vertical-timeline-element-subtitle">Los Angeles, CA</h4>
-                <p>
-                    User Experience, Visual Design
-                </p>
+                <div className='info'>
+                    <h2 className="vertical-timeline-element-title" onClick={handleIconHover}><b><u>Project Manager</u></b></h2>
+                    <h3><i>Company:</i> Doorkee</h3>
+                    <h4 className="vertical-timeline-element-subtitle" onClick={handleIconHover}>Location: New York City, NY</h4>
+                    <br />
+                    <p onClick={handleIconHover}>
+                        Empirically analyzed price and movement trends for NYC apartments utilizing various ML practices
+                    </p>
+                    <p><i>2020-2021</i></p>
+                </div>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--work"
-                date="2006 - 2008"
-                iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
-                icon={<WorkIcon />}
+                contentStyle={{ background: 'linear-gradient(-45deg, #f3ec78, #af4261)', color: '#fff', fontWeight: 'bold' }}
+                contentArrowStyle={{ borderRight: '7px solid ' }}
+                iconStyle={{ background: 'linear-gradient(to right, #f3ec78, #af4261)', color: '#fff' }}
+                icon={< WorkIcon onClick={handleIconHover} />}
             >
-                <h3 className="vertical-timeline-element-title">Web Designer</h3>
-                <h4 className="vertical-timeline-element-subtitle">San Francisco, CA</h4>
-                <p>
-                    User Experience, Visual Design
-                </p>
+                <div className='info'>
+                    <h2 className="vertical-timeline-element-title" onClick={handleIconHover}><b><u>Real Estate Salesperson</u></b></h2>
+                    <h3><i>Company:</i> Coldwell Banker</h3>
+                    <h4 className="vertical-timeline-element-subtitle" onClick={handleIconHover}>Location: Minnesota & Massachusetts</h4>
+                    <br />
+                    <p onClick={handleIconHover}>
+                        Sold Houses
+                    </p>
+                    <p><i>2017-2021</i></p>
+                </div>
             </VerticalTimelineElement>
             <VerticalTimelineElement
                 className="vertical-timeline-element--education"

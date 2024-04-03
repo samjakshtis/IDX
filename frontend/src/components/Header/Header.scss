@@ -15,8 +15,32 @@
 .header-name {
     font-size: 40px;
     font-weight: bold;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
+    margin-top: 5px;
+    position: relative;
+    background: linear-gradient(to right, #f3ec78, #af4261);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        padding:15px;
+}
+
+.header-name::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 2px solid transparent;
+    /* Set the border width */
+    border-image: linear-gradient(45deg, #f3ec78, #af4261);
+    /* Set the gradient as border */
+    border-image-slice: 1;
+    /* Ensure the entire border is visible */
+    pointer-events: none;
+    border-radius: 10px;
+    /* Ensure the pseudo-element doesn't interfere with mouse events */
 }
 
 .header-right {
@@ -31,14 +55,14 @@
 }
 
 .header-right a {
-    color: black;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     margin-left: 20px;
     /* Adjust margin for spacing between links */
 }
 
 .header-right a:hover {
-    color: #3057bc;
+    color: #f90000;
     text-decoration: underline;
     font-weight: bold;
 }

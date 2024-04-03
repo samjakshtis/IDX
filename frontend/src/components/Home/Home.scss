@@ -1,18 +1,43 @@
+.Title {
+    font-size: 55px;
+    background: linear-gradient(to right, #f3ec78, #af4261);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+}
+
 .vertical-timeline-element--work {
     transition: transform 0.2s ease;
     cursor: pointer;
-    /* Add transition effect for smooth expansion */
+}
+
+.resume-button {
+    width:15%;
+    height:45px;
+    background: linear-gradient(45deg, #f3ec78, #af4261);
+    color: white;
+    border: 0cap;
+    border-radius: 20px;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.resume-button:hover {
+    opacity: 0.85;
+    cursor: pointer;
 }
 
 .vertical-timeline-element--work:hover {
     transform: scale(1.1);
-    /* Expand the icon by 10% on hover */
 }
 
-.info:hover {
-    color: white;
+.vertical-timeline-element-title {
+    color:white !important;
 }
 
+
+// .info:hover {
+//     font-size: 25px;
+// }
 // p {
 //     color: black;
 // }
