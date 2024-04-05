@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './movies.scss';
 
-function WorkingPapers() {
+function Movies() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
@@ -18,18 +18,27 @@ function WorkingPapers() {
         }
     };
 
+    data.sort((a, b) => {
+        // Convert date strings to Date objects
+        const dateA = new Date(a.date_entered);
+        const dateB = new Date(b.date_entered);
+
+        // Compare dates
+        return dateB - dateA; // Sorting in descending order (latest first)
+    });
+
+
     return (
         <div>
-            <h1>Movies</h1>
-            <ul className="tile-list">
+            <h1>Movies I Reccomend</h1>
+            <ul className="tiles">
                 {data.map((item, index) => (
                     <li key={index}>
-                        <a href={item.paper_url} className="tile-link">
+                        <a href={item.movie_url} target="_blank" className="movie_url">
                             <h2>{item.title}</h2>
-                            <p id="Authors">Authors: {item.authors}</p>
-                            <p id="Abstract-title">Abstract</p>
-                            <div className="abstract-wrapper">
-                                <p id="Abstract">{item.abstract}</p>
+                            <p id="Movie-rating">Rating: {item.rating}/10</p>
+                            <div className="movie-wrapper">
+                                <p id="movie">Release Date: {new Date(item.date_entered).getFullYear()}</p>
                             </div>
                         </a>
                     </li>
@@ -39,4 +48,4 @@ function WorkingPapers() {
     );
 }
 
-export default WorkingPapers;
+export default Movies;

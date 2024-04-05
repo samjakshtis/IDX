@@ -34,10 +34,47 @@
     color:white !important;
 }
 
+// Home.scss
 
-// .info:hover {
-//     font-size: 25px;
-// }
-// p {
-//     color: black;
-// }
+.modal-overlay {
+    background-color: rgba(0, 0, 0, 0.5); // Semi-transparent black overlay
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inset: auto;
+}
+
+.modal-content {
+    position: absolute;
+    inset: auto; // Override the default inset value
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    max-width: 400px; // Adjust the max-width as needed
+    left: 50%; // Position the modal horizontally centered
+    top: 50%; // Position the modal vertically centered
+    transform: translate(-50%, -50%); // Center the modal using translate
+}
+
+.bullet-list {
+    list-style-type: disc; // Use bullet points
+    padding-left: 20px; // Add some space to the left of each list item
+}
+
+.parent-element .ReactModal__Content ReactModal__Content--after-open {
+    position: absolute;
+    inset: auto; // Override the default inset value
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+    max-width: 400px; // Adjust the max-width as needed
+    left: 50%; // Position the modal horizontally centered
+    top: 50%; // Position the modal vertically centered
+    transform: translate(-50%, -50%); // Center the modal horizontally and vertically
+}
