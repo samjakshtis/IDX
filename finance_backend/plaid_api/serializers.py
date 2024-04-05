@@ -10,3 +10,8 @@ class MoviesSerializer(serializers.ModelSerializer):
     class Meta: 
         model = MoviesModel
         fields = '__all__'
+
+class PodcastSerializer(serializers.ModelSerializer): 
+    class Meta: 
+        model = PodcastsModel
+        fields = '__all__'

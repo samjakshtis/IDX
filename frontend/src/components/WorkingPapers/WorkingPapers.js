@@ -20,7 +20,7 @@ function WorkingPapers() {
 
     return (
         <div>
-            <h1>Working Papers</h1>
+            <h1>Working Papers I Recommend</h1>
             <ul className="tile-list">
                 {data.map((item, index) => (
                     <li key={index}>

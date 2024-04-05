@@ -1,120 +1,54 @@
-// Variables
-$primary-color: #007bff;
-$secondary-color: #6c757d;
-
-// Styles
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
-}
-
-.container {
-    max-width: 100%;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.tile-list {
+.tiles {
     list-style-type: none;
     padding: 0;
     display: flex;
-    flex-wrap: wrap;
-    max-width: 100%;
-}
-
-.tile-list li {
-    flex: 0 0 calc(20% - 20px);
+    /* Use flexbox */
+    flex-direction: column;
+    /* Stack items vertically */
+    width: 600px;
     /* Adjust width as needed */
-    margin: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    // overflow: hidden;
-    transition: transform 0.3s ease;
-    height: 500px;
+    margin: 0 auto;
+    /* Center horizontally */
 }
 
-.tile-list li:hover {
-    transform: scale(1.05);
-    /* Scale up on hover */
+.tiles li {
+    margin-bottom: 25px;
+    /* Add space between tiles */
 }
 
-.tile-link {
+.movie_url {
     display: block;
     color: inherit;
     text-decoration: none;
     padding: 10px;
-}
-
-.tile-link h2 {
-    margin: 0;
-}
-
-.tile-link p {
-    margin: 5px 0;
-}
-h1 {
-    color: $primary-color;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background-color: white;
     border-radius: 5px;
-    padding: 20px;
-    margin-bottom: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
-    color: $secondary-color;
-    margin-bottom: 10px;
+.tiles li:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+    /* Scale up on hover */
 }
 
-p {
-    margin: 0;
+.movie_url h2 {
+    margin-bottom: 10;
+    overflow-wrap: break-word;
 }
 
-p:first-child {
-    font-weight: bold;
-}
-
-#Authors {
-    font-weight: bold;
+.movie_url p {
     margin: 15px;
 }
 
-#Abstract-title {
-    font-size: 20px;
+#Movie-rating {
     font-weight: bold;
-    color: #007bff;
-    justify-content: flex-end;
-    bottom: 100px;
 }
 
-.abstract-wrapper {
+.movie-wrapper {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding-top: 5px;
-    /* Adjust as needed */
-    margin-bottom: calc(100% - 1px);
-    /* Ensures 1px gap */
-    max-height: 200px;
+    justify-content: center;
 }
 
-#Abstract {
-    white-space: pre-wrap;
-    max-width: 300px;
-    /* Adjust as needed */
-    overflow-y: auto;
-    padding: 10px;
-    border: 1px solid #ffffff;
-    color: black;
-    font-weight: 100;
-    line-height: 1.5;
-    /* Consistent line spacing */
+#movie {
+    font-style: italic;
 }
+

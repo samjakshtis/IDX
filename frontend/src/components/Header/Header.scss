@@ -62,7 +62,9 @@
 }
 
 .header-right a:hover {
-    color: #f90000;
+    background: linear-gradient(to right, #f3ec78, #af4261);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
     text-decoration: underline;
     font-weight: bold;
 }

@@ -30,7 +30,6 @@ body {
     border-radius: 5px;
     // overflow: hidden;
     transition: transform 0.3s ease;
-    height: 500px;
 }
 
 .tile-list li:hover {
@@ -47,6 +46,7 @@ body {
 
 .tile-link h2 {
     margin: 0;
+    height: 135px;
 }
 
 .tile-link p {
@@ -92,12 +92,13 @@ p:first-child {
 
 #Abstract-title {
     font-size: 20px;
+    height: 20px;
     font-weight: bold;
     background: $primary-color;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     justify-content: flex-end;
-    bottom: 100px;
+    bottom: 10px;
 }
 
 .abstract-wrapper {
@@ -106,9 +107,9 @@ p:first-child {
     justify-content: flex-end;
     padding-top: 5px;
     /* Adjust as needed */
-    margin-bottom: calc(100% - 1px);
+    // margin-bottom: 2px;
     /* Ensures 1px gap */
-    max-height: 200px;
+    max-height: 250px;
 }
 
 #Abstract {

@@ -24,7 +24,7 @@
     justify-content: center;
 
     h2 {
-        color: #333;
+        color: #ffffff;
         /* Change the color as needed */
         font-size: 30px;
         /* Adjust the font size */
@@ -42,7 +42,7 @@
         justify-content: center;
 
         div {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             margin-top: 2%;
             /* Add margin between input fields */
         }
@@ -51,7 +51,7 @@
             font-weight: bold;
             /* Make labels bold */
             margin-bottom: 5px;
-            
+            color: white;
             /* Add some space below labels */
         }
 
@@ -93,7 +93,7 @@
         
                     &:hover {
                         background: linear-gradient(#d9c336, #983751);
-                        color: black;
+                        color: rgb(255, 255, 255);
                         /* Darken the background gradient on hover */
                     }
                 }
