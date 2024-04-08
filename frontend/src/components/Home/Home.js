@@ -6,7 +6,7 @@ import WorkIcon from '@material-ui/icons/Work';
 import SchoolIcon from '@material-ui/icons/School';
 import StarIcon from '@material-ui/icons/Star';
 import './Home.scss'
-// import { Document, Page, pdfjs } from 'react-pdf';
+import CloseIcon from '@mui/icons-material/Close';
 
 function Home() {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,18 +37,51 @@ function Home() {
             title: 'Financial Data Analyst',
             company: 'Darwin Homes',
             location: 'Remote',
-            role: 'ETL, SQL, Python, Financial Data modeling efficiency through software development, Project Management, Team Leading',
+            role: 'Drove the design and execution of efficient ETL processes for internal and external data warehouses, utilizing SQL and Python extensively for data gathering, manipulation, and analysis, while also leading multiple financial-focused projects from inception to implementation',
             Description_1: 'Develop and implement efficient ETL processes surrounding internal and external warehouses',
             Description_2: 'Daily use of SQl and Python for the gathering, manipulation and analyzation of financial data',
             Description_3: 'Lead multiple financial focused projects for actionable development and implementation',
             date: '2023-Present',
         },
         {
-            title: 'Financial Data Analyst',
-            company: 'Darwin Homes',
-            location: 'Remote',
-            description: 'ETL, SQL, Python, Financial Data modeling efficiency through software development, Project Management, Team Leading',
-            date: '2023-Present',
+            title: 'Project Manager',
+            company: 'LandVest',
+            location: 'Boston, MA',
+            role: 'Contributed to revenue growth and operational efficiency by managing centralized databases, developing pricing models for high-value real estate deals, and leading data research projects to support strategic decision-making',
+            Description_1: 'Assisted in a 28% YOY increase in revenue for consulting department by maintaining an optimized central comparable sales and lease database for specific high-value comparable properties and markets',
+            Description_2: 'Developed multi-tiered pricing model for $+1B of real estate deals (development, acquisitions, and refinances for clients) using a combination of mySQL, VBA, and Python code',
+            Description_3: 'Led real estate data research projects for the Managing Director for exclusive presentation materials through collection, customization, and visualization of data sets for internal and external audiences',
+            date: '2021 - 2023',
+        },
+        {
+            title: 'Comparative Unit Analyst',
+            company: 'Doorkee',
+            location: 'New York City, NY',
+            role: 'Played a pivotal role in leveraging data analytics to enhance decision-making processes, optimize pricing strategies, and streamline workflows, ultimately driving efficiency and maximizing revenue for property management firms.',
+            Description_1: 'Empirically analyzed price and movement trends for NYC apartments utilizing various ML practices',
+            Description_2: 'Reported optimized pricing models of apartment units to maximize rental income and minimize vacancy for +1,000 unit property management firms',
+            Description_3: 'Worked with firms and team members to update workflows to optimize efficiency and accessibility for the company through data analytics',
+            date: '2019-2021',
+        },
+        {
+            title: 'Real Estate Sales Person',
+            company: 'Coldwell Banker',
+            location: 'Minnesota and Massachusetts',
+            role: 'Sold Houses',
+            Description_1: 'Created and implemented a centralized database system to optimize sales and customer engagement',
+            Description_2: 'Managed contracts, negotiations and all aspects of sales to finalize purchases and exceed customer expectations',
+            Description_3: 'Reviewed market research data and changed sales plans accordingly',
+            date: '2017-2021',
+        },
+        {
+            title: 'Farm Manager',
+            company: 'Chestnut farms',
+            location: 'Hardwick, MA',
+            role: 'Helping on the family Livestock Farm',
+            Description_1: 'Established sustainable farming practices, including rotational grazing and organic feed sourcing, to promote environmental stewardship and animal welfare while maintaining cost-effectiveness',
+            Description_2: 'Implemented customer feedback mechanisms and market analysis to tailor product offerings, pricing strategies, and promotional activities, resulting in enhanced customer satisfaction and increased sales volumes',
+            Description_3: 'Evaluated equipment performance and conducted cost-benefit analyses to inform decisions on machinery upgrades or replacements, optimizing farm productivity and resource allocation.',
+            date: '1998-Present',
         },
     ]
 
@@ -72,6 +105,7 @@ function Home() {
                             <h4 className="vertical-timeline-element-subtitle" onClick={() => handleIconHover(item)}>Location: {item.location}</h4>
                             <br />
                             <p onClick={() => handleIconHover(item)}>{item.description}</p>
+                            <p onClick={() => handleIconHover(item)}> <i>{item.role}</i></p>
                             <p onClick={() => handleIconHover(item)}> <i>{item.date}</i></p>
                         </div>
                     </VerticalTimelineElement>
@@ -192,7 +226,7 @@ function Home() {
                 </div>
             </VerticalTimelineElement>
             <VerticalTimelineElement
-                iconStyle={{ background: 'linear-gradient(167deg, rgba(37,182,43,1) 15%, rgba(224,115,58,1) 44%, rgba(35,34,218,1) 99%)', color: '#fff' }}
+                iconStyle={{ background: 'linear-gradient(to bottom right, #ffff66 0%, #ff5050 100%)', color: '#fff' }}
                 icon={<StarIcon />}
             />
         </VerticalTimeline>
@@ -200,9 +234,11 @@ function Home() {
             isOpen={isModalOpen && selectedItem}
             onRequestClose={closeModal}
             contentLabel="Example Modal"
+            className='Modal'
         >
             {selectedItem && (
                 <div className="modal-content">
+                    <button className="close-button" onClick={closeModal}><CloseIcon /></button>
                     <h2 className="modal-title">{selectedItem.title}</h2>
                     <p className="modal-company"><i>{selectedItem.company}</i></p>
                     <p className="modal-date">{selectedItem.date}</p>
@@ -212,7 +248,6 @@ function Home() {
                         <li className="modal-description">{selectedItem.Description_2}</li>
                         <li className="modal-description">{selectedItem.Description_3}</li>
                     </ul>
-                    <button onClick={closeModal}>Close Modal</button>
                 </div>
             )}
         </Modal>
