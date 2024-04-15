@@ -62,6 +62,7 @@ plaid-python==14.0.0
 platformdirs==2.6.0
 prompt-toolkit==3.0.43
 psycopg2==2.9.9
+psycopg2-binary==2.9.9
 PuLP==2.7.0
 pyasn1==0.5.0
 pyasn1-modules==0.3.0
