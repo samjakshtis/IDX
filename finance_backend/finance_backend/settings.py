@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -24,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ('SECRET_KEY')
+SECRET_KEY = 'django-insecure-+v1-kfjzn!n6@m%c+4-3@q=jj=v_j27=)r3%)8(_xqvvmrues7'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,8 +90,12 @@ WSGI_APPLICATION = 'finance_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME'),
+        'USER':os.getenv('DB_USER'),
+        'PASSWORD':os.getenv('DB_PWD'),
+        'HOST':os.getenv('DB_HOST'),
+        'PORT':os.getenv('DB_PORT'),
     }
 }
 
@@ -139,5 +142,3 @@ STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-django_heroku.settings(locals())
